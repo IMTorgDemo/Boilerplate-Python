@@ -15,11 +15,23 @@ If you want to learn more about ``setup.py`` files, check out `this repository <
 ToDo
 ========================
 
-* .env file
 * config.json
+* .env file
 * logging
 * pipenv
 * vscode setup
 * dockerfile
 * load to pypi
 
+
+
+Getting Started
+========================
+
+```
+$ pipenv --three
+$ pipenv install
+$ pipenv shell
+(venv)$ pytest
+(venv)$ python bundler
+```
