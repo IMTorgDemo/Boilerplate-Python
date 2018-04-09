@@ -20,6 +20,7 @@ ToDo
 * ~~config.json~~
 * ~~.env file~~
 * ~~logging~~
+* testing
 * dockerfile
 * load to pypi
 
