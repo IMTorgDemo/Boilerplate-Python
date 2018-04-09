@@ -19,7 +19,7 @@ ToDo
 * ~~vscode setup~~
 * ~~config.json~~
 * ~~.env file~~
-* logging
+* ~~logging~~
 * dockerfile
 * load to pypi
 

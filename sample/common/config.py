@@ -21,3 +21,6 @@ config = json.loads(open( workdir / "config.json" ).read())
 
 config["WORKING"] = workdir
 config["FILE_LOAD"] = config["WORKING"] / config["FILE_LOAD"]
+
+config["FILE_LOGGER"] = config["WORKING"] / config["FILE_LOGGER"]
+config["FILE_ERROR"] = config["WORKING"] / config["FILE_ERROR"]

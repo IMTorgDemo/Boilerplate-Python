@@ -40,6 +40,7 @@ import os
 # internal libs
 import helpers
 from common import config
+from common import log
 
 # external libs
 import requests
@@ -85,6 +86,7 @@ def hmm():
 def main():
     """Run the script from commandline.
     """
+    log.log("******* BEGIN SCRIPT *******")
     hmm()
 
 
