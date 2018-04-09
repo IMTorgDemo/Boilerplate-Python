@@ -12,6 +12,7 @@ sphinx = "*"
 "path.py" = "*"
 pytest = "*"
 python-dotenv = "*"
+pathlib = "*"
 
 
 [dev-packages]

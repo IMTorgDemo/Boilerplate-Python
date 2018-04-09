@@ -47,7 +47,10 @@ import requests
 
 
 # auth
-
+from dotenv import load_dotenv
+from pathlib import Path 
+env_path = Path('.')/'.env'
+load_dotenv(dotenv_path=env_path)
 
 
 # global var
@@ -56,7 +59,7 @@ env_var = {
     'EMAIL':os.getenv('EMAIL'),
     'PASSWORD':os.getenv('PASSWORD'),
     # urls
-    'FILE_LOAD':config.config["FILE_LOAD"]
+    'FILE_LOAD':config.config['FILE_LOAD']
 }
 
 
@@ -65,7 +68,8 @@ env_var = {
 
 def get_hmm():
     """Get a thought."""
-    return 'hmmm...'
+    out = 'hmmm... nice username, ' + env_var['EMAIL']
+    return out
 
 
 def hmm():
@@ -81,7 +85,6 @@ def hmm():
 def main():
     """Run the script from commandline.
     """
-    get_hmm()
     hmm()
 
 

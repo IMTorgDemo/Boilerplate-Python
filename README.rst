@@ -15,11 +15,11 @@ If you want to learn more about ``setup.py`` files, check out `this repository <
 ToDo
 ========================
 
-* config.json
-* .env file
+* ~~pipenv~~
+* ~~vscode setup~~
+* ~~config.json~~
+* ~~.env file~~
 * logging
-* pipenv
-* vscode setup
 * dockerfile
 * load to pypi
 
