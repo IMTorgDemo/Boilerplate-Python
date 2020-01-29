@@ -29,10 +29,27 @@ ToDo
 Getting Started
 ========================
 
+Prepare environment
+
+```
+#env variables
+cp .env_example .env
+#review config.json
+vi config.json
+```
+
+Run commandline
+
 ```
 $ pipenv --three
 $ pipenv install
 $ pipenv shell
+(venv)$ python sample/core.py
+```
+
+Run tests
+
+```
 (venv)$ pytest
 (venv)$ python bundler
 ```

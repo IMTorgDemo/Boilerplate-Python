@@ -1,6 +1,6 @@
 {
     "FILE_LOAD":"./data/processed/dataLoad.txt",
 
-    "FILE_LOGGER":"../logs/log.txt",
-    "FILE_ERROR":"../logs/error.txt"
+    "FILE_LOGGER":"./logs/log.txt",
+    "FILE_ERROR":"./logs/error.txt"
 }
