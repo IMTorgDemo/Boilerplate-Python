@@ -6,7 +6,7 @@ import datetime
 import traceback
 
 # internal lib
-from common import config
+from . import config
 
 # external lib
 

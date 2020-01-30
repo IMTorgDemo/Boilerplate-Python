@@ -38,9 +38,9 @@ Todo:
 import os
 
 # internal libs
-import helpers
-from common import config
-from common import log
+from . import helpers
+from .common import config
+from .common import log
 
 # external libs
 import requests
