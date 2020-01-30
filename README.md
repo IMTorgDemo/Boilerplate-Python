@@ -20,6 +20,8 @@ _Configuration and execution_
 * ~~logging~~
 * ~~testing~~
 * documentation / sphinx?
+* ~~use globally~~
+* ~~use in pipenv~~
 * ~~use as import~~
 * ~~install and via cmdln~~
 * run directly at cmdln => NO
@@ -39,7 +41,7 @@ _Deployment_
 Usages
 ========================
 
-Prepare environment
+Configure environment
 
 ```
 #env variables
@@ -52,7 +54,13 @@ $ vi pipfile
 vi MANIFEST.in
 ```
 
-Start environment
+Prepare requirements globally 
+
+```
+make -f Makefile
+```
+
+Prepare within virtual pipenv
 
 ```
 $ pipenv --three
@@ -64,7 +72,7 @@ Run tests
 
 ```
 (venv)$ pytest
-(venv)$ python bundler    #<<<TODO:what is this?
+(venv)$ python bundler    #TODO:what is this?
 ```
 
 Use as import
@@ -83,7 +91,7 @@ Install commandline utility
 Run commandline
 
 ```
-(venv)$ python sample/core.py    # *** FAILS *** ImportError: attempted relative import with no known parent package
+(venv)$ python sample/core.py    # TODO:ImportError: attempted relative import with no known parent package
 ```
 
 
@@ -97,7 +105,6 @@ Build with
 ```
 (venv)$ pip wheel -w dist --verbose .
 ```
-
 
 Build for linux
 
