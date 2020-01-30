@@ -8,6 +8,7 @@ __pycache__/
 
 # Configuration files
 .env 
+dockcross-manylinux-*
 
 # C extensions
 *.so
