@@ -1,10 +1,15 @@
 Sample Module Repository
 ========================
 
+_References_
+
+* [using pyenv with pipenv](https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c)
 * [repo of original file structure](https://github.com/navdeep-G/samplemod)
 * [kennethreitz blog post](<http://www.kennethreitz.org/essays/repository-structure-and-python>)
 * [learn more about ``setup.py`` files](https://github.com/kennethreitz/setup.py)
 
+
+This repo is a template for creating various python distributions to be used with specific python versions.
 
 
 
@@ -13,6 +18,7 @@ Functionality
 
 _Configuration and execution_
 
+* ~~pyenv~~
 * ~~pipenv~~
 * ~~vscode setup~~
 * ~~config.json~~
@@ -41,6 +47,15 @@ _Deployment_
 Usages
 ========================
 
+Install correct python version
+
+```
+#ensure correct python version is available
+$ pyenv install 3.7.0
+#install version to specific local directory
+$ pyenv local 3.7.0
+```
+
 Configure environment
 
 ```
@@ -51,13 +66,26 @@ $ vi config.json
 #check versions
 $ vi pipfile
 #ensure included
-vi MANIFEST.in
+$ vi MANIFEST.in
+$ vi setup.py
 ```
+
+Use one of two venv approaches
+
+* Makefile
+  - requirements.txt
+  - MANIFEST.in
+
+(or)
+
+* pipenv
+  - Pipfile
+  - Pipfile.lock
 
 Prepare requirements globally 
 
 ```
-make -f Makefile
+$ make -f Makefile
 ```
 
 Prepare within virtual pipenv
@@ -65,6 +93,8 @@ Prepare within virtual pipenv
 ```
 $ pipenv --three
 $ pipenv install
+$ pipenv install flask
+$ pipenv install --dev yapf
 $ pipenv shell
 ```
 
@@ -119,9 +149,9 @@ chmod +x ./dockcross-manylinux-x64
 Use on linux
 
 ```
-unzip sample-0.1.0-py2-none-any.whl
-pwd
-python
+$ unzip sample-0.1.0-py2-none-any.whl
+$ pwd
+$ python
 python>>> import sys
 python>>> sys.path.append(<pwd>)
 python>>> import sample
