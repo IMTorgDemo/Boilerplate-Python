@@ -3,13 +3,17 @@ Sample Module Repository
 
 _References_
 
+
 * [using pyenv with pipenv](https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c)
 * [repo of original file structure](https://github.com/navdeep-G/samplemod)
 * [kennethreitz blog post](<http://www.kennethreitz.org/essays/repository-structure-and-python>)
 * [learn more about ``setup.py`` files](https://github.com/kennethreitz/setup.py)
+* [python docs for packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+* [use pyproject.toml, setup.cfg inplace of setup.py](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
 
 This repo is a template for creating various python distributions to be used with specific python versions.
+
 
 
 
@@ -30,22 +34,24 @@ _Configuration and execution_
 * ~~use in pipenv~~
 * ~~use as import~~
 * ~~install and via cmdln~~
-* run directly at cmdln => NO
+* ~~run directly at cmdln~~
 
 _Deployment_
 
 * ~~wheel distribution~~
-* binary distribution
+* ~~binary distribution~~
 * obfuscated distribution
 * dockerfile
-* upload to pypi
+* ~~upload to pypi~~
 
 
 
 
 
-Usages
+Workflow
 ========================
+
+### Setup environment
 
 Install correct python version
 
@@ -111,6 +117,54 @@ Use as import
 (venv)$ python
 >>> import sample
 ```
+
+
+### Distributing with PyPI
+
+* add pyproject.toml and setup.cfg
+```
+$ pipenv install build
+$ pipenv requirements > requirements.txt
+```
+
+Copy requirements.txt to setup.cfg
+
+```
+$ pipenv run python -m build --wheel    
+#creates .build/ .dist/
+#the primary package is: .dist/sample-0.1.0-py3-none-any.whl
+$ pip install dist/sample-0.1.0-py3-none-any.whl --force-reinstall
+$ python
+>>> import sample
+>>> sample.hmm()
+#hmmm... nice username, name@domain.com
+#200
+>>> exit()
+$ sample
+#ModuleNotFoundError: No module named 'sample.common'
+$ rm .env
+#clean-up, only .env_example should remain
+```
+
+
+### Uploading the distribution archives
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Install commandline utility
 

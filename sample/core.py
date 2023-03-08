@@ -77,6 +77,9 @@ def hmm():
     """Contemplation..."""
     if helpers.get_answer():
         print(get_hmm())
+    url = 'https://www.google.com'
+    resp = requests.get(url)
+    print(resp.status_code)
 
 
 

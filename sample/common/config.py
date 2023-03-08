@@ -8,13 +8,13 @@ import json
 import os
 
 # external lib
-import path
+from pathlib import Path
 
 try:
-    workdir = path.Path(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../"))
+    workdir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../"))
 except NameError: 
     import sys
-    workdir = path.Path(os.path.dirname(os.path.abspath(sys.argv[0])))
+    workdir = Path(os.path.dirname(os.path.abspath(sys.argv[0])))
     
 
 config = json.loads(open( workdir / "config.json" ).read())

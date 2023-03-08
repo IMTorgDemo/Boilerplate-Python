@@ -5,14 +5,15 @@ name = "pypi"
 
 [packages]
 nose = "*"
-sphinx = "*"
 "path.py" = "*"
 pytest = "*"
 python-dotenv = "*"
 pathlib = "*"
+build = "*"
+requests = "*"
 
 [dev-packages]
 pylint = "*"
 
 [requires]
-python_version = "3.7.6"
+python_version = "3"
