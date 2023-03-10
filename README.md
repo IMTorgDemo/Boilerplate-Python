@@ -137,11 +137,11 @@ $ pip install dist/sample-0.1.0-py3-none-any.whl --force-reinstall
 $ python
 >>> import sample
 >>> sample.hmm()
-#hmmm... nice username, name@domain.com
-#200
+   #hmmm... nice username, name@domain.com
+   #200
 >>> exit()
 $ sample
-#ModuleNotFoundError: No module named 'sample.common'
+   #ModuleNotFoundError: No module named 'sample.common'
 $ rm .env
 #clean-up, only .env_example should remain
 ```
@@ -149,8 +149,35 @@ $ rm .env
 
 ### Uploading the distribution archives
 
+Prepare file: `$HOME/.pypirc` with
 
+```
+[testpypi]
+  username = __token__
+  password = pypi-<PASS>
+```
 
+PyPI will check your `setup.cfg` file for correctness and uniqueness of name and version.   PyPI does not allow for a filename to be reused, even once a project has been deleted and recreated.  A distribution filename on PyPI consists of the combination of project name, version number, and distribution type. 
+
+```
+$ pipenv run python -m build --wheel    
+#creates .build/ .dist/
+#the primary package is: .dist/IMTorg_Sample-0.1.2-py3-none-any.whl
+pipenv run python -m twine upload --repository testpypi dist/*
+```
+
+View the upload, here: https://test.pypi.org/project/IMTorg-Sample/0.1.0/
+
+Install and test with:
+
+```
+$ pip install -i https://test.pypi.org/simple/ --no-deps IMTorg-Sample
+# python
+>>> import sample
+>>> sample.hmm()
+   #hmmm... nice username, First.Last@Domain.com
+   #200
+```
 
 
 

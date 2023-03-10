@@ -11,6 +11,7 @@ python-dotenv = "*"
 pathlib = "*"
 build = "*"
 requests = "*"
+twine = "*"
 
 [dev-packages]
 pylint = "*"
